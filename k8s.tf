@@ -1,6 +1,6 @@
 resource "digitalocean_kubernetes_cluster" "foo" {
   name    = "foo"
-  region  = "sfo1"
+  region  = "SFO1"
   version = "1.14.3-do.0"
 
   node_pool {
