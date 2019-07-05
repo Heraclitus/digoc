@@ -1,3 +1,4 @@
 key
 runt.sourceme.sh
 **/.terraform
+**/terraform.tfstate
