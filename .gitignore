@@ -1,4 +1,12 @@
 key
-runt.sourceme.sh
 **/.terraform
 **/terraform.tfstate
+**/terraform.tfstate.backup
+.terraform.lock.hcl
+.my*
+project_name.txt
+.gitsecret/keys/random_seed
+space-access-key-2021
+personal-access-token-2021
+ssh-to-host.sh
+letsencrypt.tar.gz

@@ -1,9 +1,19 @@
 variable "do_token" {}
-variable "pub_key" {}
 variable "pvt_key" {}
-variable "ssh_fingerprint" {}
+
+data "digitalocean_ssh_key" "lubuntu" {
+  name = "lubuntu"
+}
+
+terraform {
+  required_providers {
+    digitalocean = {
+      source = "digitalocean/digitalocean"
+      version = "~> 2.0"
+    }
+  }
+}
 
 provider "digitalocean" {
-  token = "${var.do_token}"
-  version = "1.5.0"
+  token = var.do_token
 }
