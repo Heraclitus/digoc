@@ -7,9 +7,18 @@ resource "digitalocean_domain" "mydomain" {
    name       = var.project_name
 }
 
+resource "digitalocean_record" "A_noprefix" {
+  type = "A"
+  ttl  = 300
+  name = "@"
+  value = digitalocean_floating_ip.mydomain.ip_address
+  domain = digitalocean_domain.mydomain.name
+}
+
 resource "digitalocean_record" "A" {
   type = "A"
   name = "www"
+  ttl  = 300
   value = digitalocean_floating_ip.mydomain.ip_address
   domain = digitalocean_domain.mydomain.name
 }
